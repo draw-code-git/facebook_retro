@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1024">
+  <title>thefacebook [Windows XP Internet Explorer]</title>
+  <style>
+    /* A self-contained 1024 × 768 browser capture; deliberately non-responsive. */
+    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+    body { background: #2d5f91; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 11px; }
+    .xp-window { width: 1024px; height: 768px; margin: 0 auto; background: #ece9d8; box-shadow: 0 0 15px rgba(0,0,0,.34); }
+    .titlebar { height: 26px; background: linear-gradient(#1769ca 0%, #0755ad 45%, #174c9c 100%); border-bottom: 1px solid #003a92; color: white; line-height: 26px; font: bold 12px Tahoma, sans-serif; padding-left: 8px; text-shadow: 1px 1px #123c76; box-sizing: border-box; position: relative; }
+    .ie-logo { display:inline-block; width: 15px; height:15px; margin:5px 5px 0 0; vertical-align:top; border:1px solid #cce5ff; border-radius:50%; color:#fff; line-height:14px; text-align:center; font:bold italic 14px Georgia; background:#2c9ee8; }
+    .win-buttons { position:absolute; right:5px; top:4px; }
+    .win-buttons b { display:inline-block; width:20px; height:17px; margin-left:2px; border:1px solid #fff; color:#fff; text-align:center; line-height:15px; font: bold 12px Tahoma; background:linear-gradient(#4e94e7,#1260ba); }
+    .win-buttons b:last-child { background:linear-gradient(#e57b69,#c3321c); }
+    .menubar { height:21px; box-sizing:border-box; border-bottom:1px solid #bbb9ac; padding:3px 0 0 8px; font: 11px Tahoma, sans-serif; color:#111; }
+    .menubar span { margin-right:16px; }
+    .toolbar { height:40px; box-sizing:border-box; border-bottom:1px solid #b2b0a7; padding:3px 8px; white-space:nowrap; font: 10px Tahoma,sans-serif; }
+    .tool { display:inline-block; width:45px; text-align:center; height:33px; vertical-align:top; color:#222; }
+    .tool .circle { display:block; margin:0 auto 0; width:20px; height:20px; border:1px solid #7d8690; border-radius:50%; line-height:19px; font: bold 17px Arial; background:#efefef; color:#1c64b5; }
+    .tool.disabled { color:#999; } .tool.disabled .circle { color:#aaa; border-color:#aaa; }
+    .tool.home .circle { color:#e17a12; font-size:15px; } .tool.stop .circle { color:#cb1c1c; font-size:17px; }
+    .tool.search .circle { color:#386ea9; font-size:15px; }
+    .toolbar .sep { display:inline-block; height:31px; border-left:1px solid #aaa; border-right:1px solid #fff; margin:0 6px; }
+    .addressrow { height:27px; box-sizing:border-box; padding:3px 8px; border-bottom:1px solid #aaa; font:11px Tahoma,sans-serif; }
+    .addressrow label { padding-right:4px; }
+    .addr { display:inline-block; width:802px; height:18px; box-sizing:border-box; border:1px solid #7f9db9; background:#fff; line-height:16px; padding-left:4px; vertical-align:top; color:#000; }
+    .go { margin-left:4px; height:20px; padding:0 6px; font:11px Tahoma; border:1px solid #7f9db9; background:#efefef; }
+    .page { height:630px; overflow:hidden; background:#f6f6f6; padding-top:17px; box-sizing:border-box; }
+    .site { width:780px; margin:0 auto; background:#fff; border:1px solid #bfc6d1; }
+    .fbbar { height:36px; background:#3b5998; border-bottom:2px solid #1e3b76; color:#fff; position:relative; }
+    .mark { position:absolute; left:13px; top:5px; font:bold 25px Georgia, 'Times New Roman', serif; letter-spacing:-1.6px; }
+    .barlinks { position:absolute; right:11px; top:12px; font:10px Arial; } .barlinks a { color:#fff; text-decoration:none; }
+    .site-body { padding:13px 12px 8px; }
+    table { border-collapse:collapse; } .layout { width:100%; table-layout:fixed; } .left { width:156px; vertical-align:top; padding-right:9px; } .center { width:380px; vertical-align:top; padding:0 9px; border-left:1px solid #d9dfe8; border-right:1px solid #d9dfe8; } .right { width:173px; vertical-align:top; padding-left:9px; }
+    .box { border:1px solid #b7c4d5; margin:0 0 10px; } .box h3 { margin:0; height:18px; padding:3px 5px 0; box-sizing:border-box; color:#13376c; background:#d8e1ee; border-bottom:1px solid #b7c4d5; font:bold 11px Arial; }
+    .boxin { padding:6px 5px; font-size:10px; line-height:14px; }
+    label.field { display:block; font-size:10px; margin:0 0 1px; } input.text { width:138px; height:16px; box-sizing:border-box; border:1px solid #7f9db9; padding:1px; font:10px Arial; }
+    button, select { font:10px Arial; } .oldbutton { border:1px solid #6f86a8; background:#e7e7e7; color:#000; height:19px; padding:0 6px; }
+    a { color:#1a4e9a; text-decoration:underline; cursor:pointer; } .smalllink { font-size:10px; }
+    .loginrow { margin-top:5px; } .loginrow input { vertical-align:middle; margin:0 2px 0 0; width:11px; height:11px; } .loginrow label { font-size:9px; }
+    .nav a { display:block; margin:3px 0; } .nav { padding:1px 2px 4px; }
+    .feature-person { margin:4px 0; min-height:33px; } .feature-person .avatar { float:left; margin-right:4px; }
+    .avatar { width:29px; height:29px; border:1px solid #777; background-color:#b7b7b7; background-size:cover; image-rendering:pixelated; }
+    .portrait1 { background-image:linear-gradient(90deg,#726751 0 29%,#d3b595 30% 69%,#363f4e 70%),linear-gradient(#b4c0cd 0 42%,#485d6d 43%); }
+    .portrait2 { background-image:linear-gradient(90deg,#bda27b 0 22%,#e3c1a1 23% 76%,#453222 77%),linear-gradient(#c4cfdd 0 48%,#796040 49%); }
+    .portrait3 { background-image:linear-gradient(90deg,#37271f 0 30%,#a8704b 31% 70%,#2d211d 71%),linear-gradient(#d0d3cc 0 45%,#5d7160 46%); }
+    .portrait4 { background-image:linear-gradient(90deg,#5b473c 0 28%,#e2c7ad 29% 70%,#6d4b35 71%),linear-gradient(#c6c4b9 0 49%,#7a7880 50%); }
+    .intro { margin:1px 0 13px; font:bold 16px 'Times New Roman', serif; color:#183d78; line-height:19px; }
+    .signup-title { font:bold 15px 'Times New Roman', serif; color:#333; border-bottom:1px solid #ccd5e2; padding-bottom:3px; margin-bottom:7px; }
+    .explain { font-size:10px; line-height:13px; margin-bottom:8px; color:#444; }
+    .signup td { height:23px; font-size:10px; vertical-align:middle; } .signup .name { text-align:right; padding-right:7px; white-space:nowrap; color:#333; width:80px; }
+    .signup input.text { width:177px; height:18px; } .signup select { height:18px; font-size:10px; border:1px solid #7f9db9; }
+    .hint { color:#777; font-size:9px; padding-left:3px; } .signup .widehint { font-size:9px; color:#777; line-height:11px; padding:1px 0 4px 87px; }
+    .terms { font-size:9px; color:#555; line-height:12px; margin:5px 0 6px 87px; width:190px; } .signup .join { padding-left:87px; }
+    .join button { color:#fff; font:bold 11px Arial; border:1px solid #244777; background:#4b6d9d; padding:2px 11px; }
+    .find { font-size:10px; line-height:14px; } .network a { display:block; margin:2px 0; } .people-grid { width:100%; margin-top:1px; }
+    .people-grid td { width:50%; text-align:center; vertical-align:top; font-size:9px; line-height:11px; padding:3px 2px; } .people-grid .avatar { width:42px; height:42px; margin:0 auto 2px; }
+    .footer { margin:13px 0 0; border-top:1px solid #d7dce4; padding:5px 0 0; text-align:center; color:#777; font:9px Arial; } .footer a { margin:0 4px; }
+    .status { height:22px; box-sizing:border-box; background:#ece9d8; border-top:1px solid #9b9b9b; font:10px Tahoma; color:#444; padding:4px 5px; position:relative; } .status .zone { position:absolute; right:5px; top:3px; border:1px solid #aaa; height:15px; width:140px; padding:1px 4px; box-sizing:border-box; text-align:right; color:#555; }
+    .status .globe { color:#2470b6; font-size:12px; padding-right:3px; }
+  </style>
+</head>
+<body>
+  <div class="xp-window">
+    <div class="titlebar"><i class="ie-logo">e</i>Microsoft Internet Explorer <span class="win-buttons"><b>_</b><b>□</b><b>×</b></span></div>
+    <div class="menubar"><span>File</span><span>Edit</span><span>View</span><span>Favorites</span><span>Tools</span><span>Help</span></div>
+    <div class="toolbar">
+      <span class="tool"><b class="circle">‹</b>Back</span><span class="tool disabled"><b class="circle">›</b>Forward</span><span class="tool stop"><b class="circle">×</b>Stop</span><span class="tool"><b class="circle">↻</b>Refresh</span><span class="tool home"><b class="circle">⌂</b>Home</span><i class="sep"></i><span class="tool search"><b class="circle">⌕</b>Search</span><span class="tool"><b class="circle">★</b>Favorites</span><span class="tool"><b class="circle">◷</b>History</span>
+    </div>
+    <div class="addressrow"><label>Address</label><span class="addr"><span style="color:#2275bd">e</span> http://www.thefacebook.com/</span><button class="go">Go</button></div>
+    <main class="page">
+      <section class="site">
+        <div class="fbbar"><div class="mark">facebook</div><div class="barlinks"><a>login</a>&nbsp; | &nbsp;<a>register</a></div></div>
+        <div class="site-body">
+          <table class="layout"><tr>
+            <td class="left">
+              <div class="box"><h3>Login</h3><div class="boxin"><label class="field">Email:</label><input class="text" type="text"><label class="field" style="margin-top:4px">Password:</label><input class="text" type="password"><div class="loginrow"><button class="oldbutton">Login</button> <a class="smalllink">Forgot password?</a></div><div class="loginrow"><input type="checkbox"><label>Keep me logged in</label></div></div></div>
+              <div class="box"><h3>facebook</h3><div class="boxin nav"><a>Home</a><a>About</a><a>FAQ</a><a>Contact Us</a><a>Terms of Use</a></div></div>
+              <div class="box"><h3>People You May Know</h3><div class="boxin"><div class="feature-person"><span class="avatar portrait1"></span><a>Daniel R.</a><br><span style="font-size:9px">Harvard '06</span></div><div class="feature-person"><span class="avatar portrait2"></span><a>Emily C.</a><br><span style="font-size:9px">Columbia '07</span></div><a class="smalllink">See more people</a></div></div>
+            </td>
+            <td class="center">
+              <div class="intro">Facebook helps you connect and share with the people in your life.</div>
+              <div class="signup-title">Sign Up</div><div class="explain">Facebook is a social utility that connects you with the people around you. It is free and anyone can join.</div>
+              <table class="signup"><tr><td class="name">First Name:</td><td><input class="text" type="text"></td></tr><tr><td class="name">Last Name:</td><td><input class="text" type="text"></td></tr><tr><td class="name">Your Email:</td><td><input class="text" type="text"></td></tr><tr><td class="name">Password:</td><td><input class="text" type="password"></td></tr><tr><td class="name">Birthday:</td><td><select><option>Month</option></select> <select><option>Day</option></select> <select><option>Year</option></select></td></tr><tr><td></td><td><a class="smalllink">Why do I need to provide this?</a></td></tr><tr><td class="name">Gender:</td><td><input type="radio" name="g" style="vertical-align:middle"> <span style="font-size:10px">Female</span>&nbsp; <input type="radio" name="g" style="vertical-align:middle"> <span style="font-size:10px">Male</span></td></tr></table>
+              <div class="terms">By clicking Sign Up, you agree to our <a>Terms of Use</a> and <a>Privacy Policy</a>.</div><div class="join"><button>Sign Up</button></div>
+            </td>
+            <td class="right">
+              <div class="box"><h3>Find Friends</h3><div class="boxin find">Search for people by name, school, or workplace.<br><a>Find people you know</a></div></div>
+              <div class="box"><h3>Networks</h3><div class="boxin network"><a>Harvard</a><a>Columbia</a><a>Stanford</a><a>Yale</a><a>See all networks</a></div></div>
+              <div class="box"><h3>Featured Profiles</h3><div class="boxin"><table class="people-grid"><tr><td><div class="avatar portrait3"></div><a>Mark W.</a></td><td><div class="avatar portrait4"></div><a>Sarah B.</a></td></tr><tr><td><div class="avatar portrait1"></div><a>James L.</a></td><td><div class="avatar portrait2"></div><a>Kate M.</a></td></tr></table></div></div>
+            </td>
+          </tr></table>
+          <div class="footer">© 2004 Thefacebook &nbsp; <a>about</a> <a>advertising</a> <a>terms</a> <a>privacy</a> <a>help</a></div>
+        </div>
+      </section>
+    </main>
+    <div class="status">Done <span class="zone"><span class="globe">◉</span>Internet</span></div>
+  </div>
+</body>
+</html>
